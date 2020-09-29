@@ -165,4 +165,4 @@ write_rds(div_df, file.path(data_dir, 'diversity.Rds'))
 write_csv(div_df, file.path(data_dir, 'diversity.csv'))
 
 write_rds(tuition_df, file.path(data_dir, 'tuition.Rds'))
-write_csv(div_df, file.path(data_dir, 'tuition.csv'))
+write_csv(tuition_df, file.path(data_dir, 'tuition.csv'))
