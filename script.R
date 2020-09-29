@@ -129,7 +129,7 @@ anti_join(tuition_df, div_df, by = 'name') %>%
 #                 use_direct_label = FALSE) +
 #     coord_flip() +
 #     theme_bw()
-# 
+
 # ggplot(div_df, aes(share, color = system)) +
 #     geom_density() +
 #     geom_rug(alpha = .5) +
@@ -150,7 +150,7 @@ comb_df = inner_join(div_df, tuition_df, by = c('name', 'state'))
 ggplot(comb_df, aes(system, share, color = system)) +
     geom_violin(scale = 'width',
                 draw_quantiles = .5) +
-    geom_beeswarm(alpha = .25) +
+    geom_beeswarm(alpha = .25, cex = 2) +
     facet_wrap(vars(category), scales = 'free')
 
 
@@ -162,4 +162,7 @@ ggplot(comb_df, aes(in_state_tuition, share)) +
 
 ## Write out ----
 write_rds(div_df, file.path(data_dir, 'diversity.Rds'))
+write_csv(div_df, file.path(data_dir, 'diversity.csv'))
+
 write_rds(tuition_df, file.path(data_dir, 'tuition.Rds'))
+write_csv(div_df, file.path(data_dir, 'tuition.csv'))
